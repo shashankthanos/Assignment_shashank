@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        #one{
+
+            display: flex;
+            justify-content: space-evenly;
+            justify-content: space-between;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 700px;
+            background-color: lightgray;
+        }
+        .ac{
+            font-size: x-large;
+            margin: 0px;
+            height: 55px;
+            width: 100px;
+            color: white;
+            background-color: lightseagreen;
+            border: none;
+        }
+        #inputvalues{
+            height: 55px;
+            width: 300px;
+            color: black;
+            font-size: x-large;
+            border: none;
+            background-color: white;
+        }
+        .btn{
+            font-size: x-large;
+            height: 45px;
+            width:98px;
+            color: white;
+            background-color: black;
+            border: none;
+        }
+        .btn1{
+            font-size: x-large;
+            height: 50px;
+            width:102px;
+            color: white;
+            background-color: darkgray;
+            border: none;
+        }
+        #black{
+            height: 200px;
+            width: auto;
+            background-color: black;
+        }
+        #white{
+               height: 55px;
+               width: auto;
+               background-color: lightseagreen;
+               
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        <div id="inputfield">
+            <div id="white">
+                <input type="text" id="inputvalues">
+            <button class="ac" onclick="clearallchar()">AC</button>
+            </div>
+            <div id="black">
+                <div>
+                    <button class="btn" onclick="getvalues('9')">9</button>
+                    <button class="btn" onclick="getvalues('8')">8</button>
+                    <button class="btn" onclick="getvalues('7')">7</button>
+                    <button class="btn1" onclick="getvalues('+')">+</button>
+                </div>
+                <div>
+                    <button class="btn" onclick="getvalues('4')">4</button>
+                    <button class="btn" onclick="getvalues('5')">5</button>
+                    <button class="btn" onclick="getvalues('6')">6</button>
+                    <button class="btn1" onclick="getvalues('-')">-</button>
+                </div>
+                <div>
+                    <button class="btn" onclick="getvalues('1')">1</button>
+                    <button class="btn" onclick="getvalues('2')">2</button>
+                    <button class="btn" onclick="getvalues('3')">3</button>
+                    <button class="btn1" onclick="getvalues('/')">/</button>
+                </div>
+                <div>
+                    <button class="btn" onclick="getvalues('.')">.</button>
+                    <button class="btn" onclick="getvalues('0')">0</button>
+                    <button class="btn" onclick="calculate()">=</button>
+                    <button class="btn1" onclick="getvalues('*')">*</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        function clearallchar(){
+            inputvalues.value=" "
+        }
+        function getvalues(n){
+            var inputvalues=document.getElementById("inputvalues")
+            inputvalues.value=inputvalues.value+n
+        }
+        function calculate(){
+            inputvalues.value=eval(inputvalues.value)
+        }
+    </script>
+</body>
+</html>
